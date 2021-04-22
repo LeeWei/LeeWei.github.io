@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React 生命周期 、filter、轮播实例 | LeeWei</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="时光荏苒，不容辜负">
+    <link rel="preload" href="/assets/css/0.styles.3d861c3a.css" as="style"><link rel="preload" href="/assets/js/app.7d901b5e.js" as="script"><link rel="preload" href="/assets/js/2.06a2725e.js" as="script"><link rel="preload" href="/assets/js/11.17ceb3a1.js" as="script"><link rel="prefetch" href="/assets/js/10.70dd4784.js"><link rel="prefetch" href="/assets/js/12.027b01f6.js"><link rel="prefetch" href="/assets/js/13.c709186e.js"><link rel="prefetch" href="/assets/js/14.78644367.js"><link rel="prefetch" href="/assets/js/15.015c1fa5.js"><link rel="prefetch" href="/assets/js/16.a5524904.js"><link rel="prefetch" href="/assets/js/17.6422e408.js"><link rel="prefetch" href="/assets/js/18.4e9f34a3.js"><link rel="prefetch" href="/assets/js/19.c0ee2b68.js"><link rel="prefetch" href="/assets/js/20.49f85742.js"><link rel="prefetch" href="/assets/js/21.1d2d098f.js"><link rel="prefetch" href="/assets/js/22.2ad8915e.js"><link rel="prefetch" href="/assets/js/23.79335352.js"><link rel="prefetch" href="/assets/js/24.c4318513.js"><link rel="prefetch" href="/assets/js/25.7e150338.js"><link rel="prefetch" href="/assets/js/26.e84ed601.js"><link rel="prefetch" href="/assets/js/27.b8cd0ca2.js"><link rel="prefetch" href="/assets/js/28.d8132e9a.js"><link rel="prefetch" href="/assets/js/29.efd4fe18.js"><link rel="prefetch" href="/assets/js/3.42d0a277.js"><link rel="prefetch" href="/assets/js/30.9dcb72e7.js"><link rel="prefetch" href="/assets/js/31.80327726.js"><link rel="prefetch" href="/assets/js/32.afe039d9.js"><link rel="prefetch" href="/assets/js/33.d3f5b913.js"><link rel="prefetch" href="/assets/js/34.d25afac4.js"><link rel="prefetch" href="/assets/js/35.96a61632.js"><link rel="prefetch" href="/assets/js/36.e3021659.js"><link rel="prefetch" href="/assets/js/37.171e55c8.js"><link rel="prefetch" href="/assets/js/38.20197aa0.js"><link rel="prefetch" href="/assets/js/39.f295f048.js"><link rel="prefetch" href="/assets/js/4.880d621f.js"><link rel="prefetch" href="/assets/js/40.e9c492b5.js"><link rel="prefetch" href="/assets/js/41.dab7f199.js"><link rel="prefetch" href="/assets/js/42.3cc57c31.js"><link rel="prefetch" href="/assets/js/43.bc73774d.js"><link rel="prefetch" href="/assets/js/44.5979dbbd.js"><link rel="prefetch" href="/assets/js/45.82bb6608.js"><link rel="prefetch" href="/assets/js/46.9e8ff3cd.js"><link rel="prefetch" href="/assets/js/47.bd31e67c.js"><link rel="prefetch" href="/assets/js/48.aba7685f.js"><link rel="prefetch" href="/assets/js/49.7dccbe8a.js"><link rel="prefetch" href="/assets/js/5.14cd14b8.js"><link rel="prefetch" href="/assets/js/50.b8eb05b4.js"><link rel="prefetch" href="/assets/js/51.ae2bce1a.js"><link rel="prefetch" href="/assets/js/52.12fd6a7e.js"><link rel="prefetch" href="/assets/js/53.0c2fac0c.js"><link rel="prefetch" href="/assets/js/54.ac6462fa.js"><link rel="prefetch" href="/assets/js/55.a3d3a858.js"><link rel="prefetch" href="/assets/js/56.d11a53cb.js"><link rel="prefetch" href="/assets/js/57.222d7dfe.js"><link rel="prefetch" href="/assets/js/58.7293170e.js"><link rel="prefetch" href="/assets/js/59.ff962efc.js"><link rel="prefetch" href="/assets/js/6.3bad40c8.js"><link rel="prefetch" href="/assets/js/60.6a3d63bc.js"><link rel="prefetch" href="/assets/js/61.b2f8e57a.js"><link rel="prefetch" href="/assets/js/62.a22cb1dc.js"><link rel="prefetch" href="/assets/js/63.ea10f1a8.js"><link rel="prefetch" href="/assets/js/64.bce9b53b.js"><link rel="prefetch" href="/assets/js/65.8da84c46.js"><link rel="prefetch" href="/assets/js/66.7f1090f8.js"><link rel="prefetch" href="/assets/js/67.e1cbc56e.js"><link rel="prefetch" href="/assets/js/68.052910c2.js"><link rel="prefetch" href="/assets/js/69.e2f2886b.js"><link rel="prefetch" href="/assets/js/7.6e1a4025.js"><link rel="prefetch" href="/assets/js/70.07395612.js"><link rel="prefetch" href="/assets/js/71.6fd275b7.js"><link rel="prefetch" href="/assets/js/72.24385907.js"><link rel="prefetch" href="/assets/js/73.e134522b.js"><link rel="prefetch" href="/assets/js/74.1c6f77cf.js"><link rel="prefetch" href="/assets/js/8.ad5e7d31.js"><link rel="prefetch" href="/assets/js/9.a1c6328b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3d861c3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/headLogo.png" alt="LeeWei" class="logo"> <span class="site-name can-hide">LeeWei</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/technology-sharing/html+css/" class="nav-link">
+  html+css
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/js/" class="nav-link">
+  js基础入门
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/jquery/" class="nav-link">
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/es6/" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/vue/" class="nav-link">
+  全面拥抱Vue
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/React/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/wx/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/node/" class="nav-link">
+  node.js
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/technology-sharing/php/" class="nav-link">
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/JAVA/" class="nav-link">
+  JAVA
+</a></li></ul></div></div><div class="nav-item"><a href="/technology-sharing/jsDir/" class="nav-link">
+  js公共方法
+</a></div><div class="nav-item"><a href="/technology-sharing/bigData/" class="nav-link">
+  大数据
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  实用工具
+</a></div><div class="nav-item"><a href="/About/" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/technology-sharing/html+css/" class="nav-link">
+  html+css
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/js/" class="nav-link">
+  js基础入门
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/jquery/" class="nav-link">
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/es6/" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/vue/" class="nav-link">
+  全面拥抱Vue
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/React/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/wx/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/node/" class="nav-link">
+  node.js
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/technology-sharing/php/" class="nav-link">
+  php
+</a></li><li class="dropdown-item"><!----> <a href="/technology-sharing/JAVA/" class="nav-link">
+  JAVA
+</a></li></ul></div></div><div class="nav-item"><a href="/technology-sharing/jsDir/" class="nav-link">
+  js公共方法
+</a></div><div class="nav-item"><a href="/technology-sharing/bigData/" class="nav-link">
+  大数据
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  实用工具
+</a></div><div class="nav-item"><a href="/About/" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>React</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/technology-sharing/React/" aria-current="page" class="sidebar-link">自由的React</a></li><li><a href="/technology-sharing/React/react生命周期.html" class="active sidebar-link">React 生命周期 、filter、轮播实例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/technology-sharing/React/react生命周期.html#过滤器" class="sidebar-link">过滤器</a></li><li class="sidebar-sub-header"><a href="/technology-sharing/React/react生命周期.html#react-生命周期" class="sidebar-link">react 生命周期</a></li></ul></li><li><a href="/technology-sharing/React/react脚手架的安装.html" class="sidebar-link">React 脚手架的安装</a></li><li><a href="/technology-sharing/React/umi.html" class="sidebar-link">umi入门介绍</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="过滤器"><a href="#过滤器" class="header-anchor">#</a> 过滤器</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 过滤器--&gt;文本数据化的处理</span>
+<span class="token comment">// react没有过滤器需要自己数据处理</span>
+    <span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span>
+    <span class="token keyword">class</span> <span class="token class-name">Hello</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
+        <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token operator">=</span><span class="token punctuation">{</span>
+                data<span class="token operator">:</span><span class="token number">0</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token function">action</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&gt;</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token string">&quot;未成年&quot;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token string">&quot;已成年&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">action2</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword">switch</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+               <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+                   <span class="token keyword">return</span> <span class="token string">&quot;上线&quot;</span>
+                <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+                   <span class="token keyword">return</span> <span class="token string">&quot;离线&quot;</span>
+                <span class="token keyword">default</span><span class="token operator">:</span>
+                    <span class="token keyword">return</span> n
+           <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">const</span> user<span class="token operator">=</span><span class="token punctuation">{</span>
+                name<span class="token operator">:</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">,</span>
+                age<span class="token operator">:</span><span class="token string">&quot;18&quot;</span><span class="token punctuation">,</span>
+                n<span class="token operator">:</span><span class="token number">2</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                    <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">}</span>
+                    <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">action2</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token punctuation">}</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>Hello<span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;my&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><h2 id="react-生命周期"><a href="#react-生命周期" class="header-anchor">#</a> react 生命周期</h2> <p><img src="/react.png"><img></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/technology-sharing/React/" class="prev router-link-active">
+        自由的React
+      </a></span> <span class="next"><a href="/technology-sharing/React/react脚手架的安装.html">
+        React 脚手架的安装
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7d901b5e.js" defer></script><script src="/assets/js/2.06a2725e.js" defer></script><script src="/assets/js/11.17ceb3a1.js" defer></script>
+  </body>
+</html>
